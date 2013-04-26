@@ -17,6 +17,23 @@ def as_json(func):
     return decorator
 
 
+def as_jsonp(functionCallKey='callback'):
+    def decorator(func):
+        def wrapper(request, *ar, **kw):
+            output = func(request, *ar, **kw)
+
+            if not isinstance(output, dict):
+                return output
+            
+            return HttpResponse(
+                "%s(%s)" % (request.GET.get(functionCallKey),
+                            json.dumps(output)),
+                'application/json'
+            )
+        return wrapper
+    return decorator
+    
+
 def as_html(template_path):
     """
     Decorator with the same functionality as render_to_response has, but uses

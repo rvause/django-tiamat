@@ -34,6 +34,21 @@ View Decorators
         return {'key': 'value'}
 
 
+``as_jsonp`` will return a JSONP response::
+
+    from tiamat.decorators import as_jsonp
+
+    @as_json('callback')
+    def some_view(request):
+        #do something
+        return {'key': 'value'}
+
+
+```http://.../?callback=myFunctionCall```
+
+returns ```myFunctionCall({"foo": "1"})```
+
+        
 ``as_html`` acts much like Django's render shortcut but as a decorator::
 
     from tiamat.decorators import as_html
