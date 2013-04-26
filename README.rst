@@ -8,6 +8,8 @@ A collection of utilities to help ...Farm
 Installation
 ============
 
+``pip install django-tiamat``
+
 Add to your Python path or ``setup.py install`` and add ``'tiamat'`` to your
 ``INSTALLED_APPS`` setting.
 
