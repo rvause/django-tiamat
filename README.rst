@@ -78,7 +78,7 @@ A simple way to handle pagination of your querysets::
 
     page = page_objects(Something.objects.all(), 25, 2)
 
-Where ``25`` is objects per page and `2` is the current page number
+Where ``25`` is objects per page and ``2`` is the current page number
 
 
 ID Encoder
