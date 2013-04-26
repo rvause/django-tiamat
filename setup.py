@@ -17,6 +17,7 @@ setup(
     long_description=desc,
     license='BSD',
     packages=find_packages(),
+    include_package_data=True,
     install_requires=['Django >= 1.4'],
     classifiers=[
         'Development Status :: 4 - Beta',
