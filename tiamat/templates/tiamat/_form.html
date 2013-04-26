@@ -1,0 +1,17 @@
+{% if form.legend %}<legend>{{ form.legend }}</legend>{% endif %}
+{% if form.help_block %}
+<div class="control-group">
+    <span class="help-block">
+        {{ form.help_block }}
+    </span>
+</div>
+{% endif %}
+{% for field in form %}
+<div class="control-group {% if field.errors %}error{% endif %}">
+    <label class="control-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+    <div class="controls">
+        {{ field }}
+        <span class="help-inline">{% for error in field.errors %}{{ error }}{% endfor %}</span>
+    </div>
+</div>
+{% endfor %}
