@@ -24,7 +24,7 @@ def as_jsonp(functionCallKey='callback'):
 
             if not isinstance(output, dict):
                 return output
-            
+
             return HttpResponse(
                 "%s(%s)" % (request.GET.get(functionCallKey),
                             json.dumps(output)),
@@ -32,7 +32,7 @@ def as_jsonp(functionCallKey='callback'):
             )
         return wrapper
     return decorator
-    
+
 
 def as_html(template_path):
     """

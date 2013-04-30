@@ -38,7 +38,7 @@ View Decorators
 
     from tiamat.decorators import as_jsonp
 
-    @as_json('callback')
+    @as_jsonp('callback')
     def some_view(request):
         #do something
         return {'key': 'value'}
@@ -48,7 +48,7 @@ View Decorators
 
 returns ```myFunctionCall({"foo": "1"})```
 
-        
+
 ``as_html`` acts much like Django's render shortcut but as a decorator::
 
     from tiamat.decorators import as_html
@@ -56,6 +56,15 @@ returns ```myFunctionCall({"foo": "1"})```
     @as_html('myapp/index.html')
     def some_view(request):
         return {'some': 'value'}
+
+
+Model Mixins
+''''''''''''
+
+``SlugMixin`` will add a slug field (named slug) to your model that will be
+automatically generated from a field called '``name``' on saving. If you wish
+to override the default field to generate the slug from set ``make_slug_from``
+on the model. See the source for more details.
 
 
 Generic Manager
