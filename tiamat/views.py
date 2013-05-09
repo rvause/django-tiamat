@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.http.request import QueryDict
 
 
 class HttpMethodNotAllowed(HttpResponse):
@@ -13,6 +14,8 @@ class BaseView(object):
 
     def __call__(self, request, *ar, **kw):
         method = request.method.lower()
+        if method not in ['get', 'post']:
+            setattr(request, method.upper(), QueryDict(request.body))
         if method not in self.allowed_methods:
             return HttpMethodNotAllowed('Not allowed: %s' % method.upper())
         method_call = getattr(self, method)
