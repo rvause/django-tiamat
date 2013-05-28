@@ -123,32 +123,6 @@ your ``SECRET_KEY`` then you can::
     encoder.decode_id(identifier_string)
 
 
-BaseView
-''''''''
-
-Provides a simple interface for views that saves you from doing ugly things
-like this::
-
-    def some_view(request):
-        if request.method == 'POST':
-            # something
-        else:
-            # something else
-
-It instead lets you make a view like this::
-
-    from tiamat.views import BaseView
-
-    class SomeView(BaseView):
-        allowed_methods = ['get', 'post']
-
-        def get(self, request, *ar, **kw):
-            # something
-
-        def post(self, request, *ar, **kw):
-            # something else
-
-
 Email
 '''''
 
