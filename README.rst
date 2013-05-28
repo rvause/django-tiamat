@@ -168,4 +168,4 @@ Need Help?
 
 Email: rvause@gmail.com
 
-Bitbucket: https://bitbucket.org/wearefarm/django-tiamat
+Github: https://github.com/rvause/django-tiamat
