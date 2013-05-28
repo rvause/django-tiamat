@@ -2,7 +2,7 @@
 django-tiamat
 =============
 
-A collection of utilities to help ...Farm
+A collection of utilities to help in Django Projects
 
 
 Installation
@@ -147,6 +147,21 @@ It instead lets you make a view like this::
 
         def post(self, request, *ar, **kw):
             # something else
+
+
+Email
+'''''
+
+``send_async_email`` provides an easy helper to send email using a template::
+
+    from tiamat.mail import send_async_email
+
+    send_async_email(
+        'path/to/template.html',
+        {'name': 'Steve'},
+        'Hello',
+        [user.email for user in User.objects.all()]
+    )
 
 
 Template Tags
