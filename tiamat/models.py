@@ -23,9 +23,10 @@ class SlugMixin(models.Model):
     """
     make_slug_from = 'name'
     slug = models.SlugField(
+        _('slug'),
         unique=True,
         max_length=255,
-        help_text=_('Unique identifier for an article. Generated on saving.')
+        help_text=_('Unique identifier for use in urls')
     )
 
     class Meta:
