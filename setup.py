@@ -12,7 +12,7 @@ setup(
     version=__version__,
     author=__author__,
     author_email=__email__,
-    url='https://bitbucket.org/wearefarm/django-tiamat',
+    url='https://github.com/rvause/django-tiamat',
     description=__doc__,
     long_description=desc,
     license='BSD',
