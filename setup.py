@@ -27,5 +27,7 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Framework :: Django'
-    ]
+    ],
+    test_suite='tiamat.tests.run_tests.run_tests',
+    tests_require=['Django']
 )
