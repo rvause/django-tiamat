@@ -51,15 +51,6 @@ View Decorators
 returns ```myFunctionCall({"foo": "1"})```
 
 
-``as_html`` acts much like Django's render shortcut but as a decorator::
-
-    from tiamat.decorators import as_html
-
-    @as_html('myapp/index.html')
-    def some_view(request):
-        return {'some': 'value'}
-
-
 Model Mixins
 ''''''''''''
 
