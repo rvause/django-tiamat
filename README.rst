@@ -4,6 +4,8 @@ django-tiamat
 
 A collection of utilities to help in Django Projects
 
+|TravisButton|_
+
 
 Installation
 ============
@@ -169,3 +171,7 @@ Need Help?
 Email: rvause@gmail.com
 
 Github: https://github.com/rvause/django-tiamat
+
+
+.. |TravisButton| image:: https://travis-ci.org/rvause/django-tiamat.png?branch=master
+.. _TravisButton: https://travis-ci.org/rvause/django-tiamat
