@@ -1,4 +1,5 @@
 INSTALLED_APPS = (
+    'tiamat',
     'tiamat.tests',
 )
 
@@ -9,4 +10,6 @@ DATABASES = {
     }
 }
 
-SECRET_KEY = 'none'
+SECRET_KEY = 'ASECRETKEY'
+
+URL_ENCODER_KEY = 'AURLENCODERKEYTHATISQUITELONG'

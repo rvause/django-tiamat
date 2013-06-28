@@ -1,8 +1,14 @@
 from django.test import TestCase
 from django.test.client import RequestFactory
+from django.core.paginator import Page
+
+from tiamat.decorators import as_json, as_jsonp
+from tiamat.paginate import page_objects
+from tiamat.urlencoder import encoder
+from tiamat.templatetags.tiamat_tags import render_form
 
 from .models import SlugTest, GMTest
-from tiamat.decorators import as_json, as_jsonp
+from .forms import TestForm
 
 
 class DecoratorsTest(TestCase):
@@ -51,3 +57,27 @@ class GenericManagerTest(TestCase):
         person_2 = GMTest.objects.create(name='Test Person')
         self.assertIn(person_2, GMTest.test_objects.all())
         self.assertNotIn(person_1, GMTest.test_objects.all())
+
+
+class PaginateTest(TestCase):
+    def test_page_objects(self):
+        for i in range(10):
+            GMTest.objects.create(name='Test %s' % i)
+        page = page_objects(GMTest.objects.all().order_by('name'), by=5)
+        self.assertTrue(isinstance(page, Page))
+        self.assertEqual(page.object_list.count(), 5)
+
+
+class URLEncoderTest(TestCase):
+    def test_encoder(self):
+        id = 9000
+        encoded = encoder.encode_id(id)
+        decoded = encoder.decode_id(encoded)
+        self.assertEqual(id, decoded)
+
+
+class TemplateTagTest(TestCase):
+    def test_render_form(self):
+        form = TestForm()
+        html = render_form(form)
+        self.assertIn('<input', html)

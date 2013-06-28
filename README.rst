@@ -134,19 +134,11 @@ Email
 Template Tags
 '''''''''''''
 
-Since the markdown tags were removed from django the ``markdown`` filter is
-handy if you wish to use Markdown to apply to input before displaying it
-(such as in flatpages)::
-
-    {% load markup_markdown %}
-    {{ some_val|markdown }}
-
-
 As an alternative to using ``form.as_p()`` or ``form.as_table()`` and dealing
 with that you can define a generic template for forms by overriding the
 template ``tiamat/_form.html`` and using it like so::
 
-    {% load render_form %}
+    {% load tiamat_tags %}
     {% render_form form %}
 
 
