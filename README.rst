@@ -147,6 +147,13 @@ More?
 
 See the source code for more.
 
+Running Tests
+=============
+
+To run the tests::
+
+    python setup.py test
+
 
 Need Help?
 ==========
