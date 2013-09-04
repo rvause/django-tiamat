@@ -1,3 +1,9 @@
+"""
+If you can use a message queue for this then it is recommended to do just that.
+The helper in this module is inteded to be used for prototyping quickly when
+you need to send some mail.
+"""
+
 import threading
 
 from django.core.mail import EmailMessage

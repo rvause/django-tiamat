@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class GenericManager(models.Manager):
     """
-    Filter query set by given selectors
+    Filter query set by given selectors.
     """
     def __init__(self, **kw):
         super(GenericManager, self).__init__()
@@ -19,7 +19,7 @@ class GenericManager(models.Manager):
 
 class SlugMixin(models.Model):
     """
-    Mixin for an auto generated slug
+    Mixin for an auto generated slug.
     """
     make_slug_from = 'name'
     slug = models.SlugField(
